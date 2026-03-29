@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generador de Prompts - Cartoon Network Classic (Single Panel NSFW)</title>
+  <title>Generador de Prompts - Cartoon Network Classic (OPTIMIZADO para Perchance)</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -21,8 +21,17 @@
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
-    h1 { text-align: center; color: #ff69b4; margin-bottom: 10px; }
+    h1 { text-align: center; color: #ff69b4; margin-bottom: 5px; }
     .subtitle { text-align: center; color: #00ffcc; font-size: 18px; margin-bottom: 30px; }
+    .perchance-note {
+      background: #00ffcc;
+      color: #16213e;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
     label { display: block; margin: 15px 0 5px; font-weight: bold; }
     input, textarea, select {
       width: 100%;
@@ -85,21 +94,20 @@
     }
     input:checked + .slider { background: #ff1493; }
     input:checked + .slider:before { transform: translateX(26px); }
-    .preset-btn {
-      background: #00ffcc;
-      color: #16213e;
-      padding: 8px 15px;
-      font-size: 14px;
-      margin: 5px;
-    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>🔥 Generador de Prompts</h1>
-    <p class="subtitle">Cartoon Network Classic • Single Panel • Chicas extremadamente delgadas con pechos y labios MASIVOS</p>
+    <h1>🔥 Generador de Prompts OPTIMIZADO</h1>
+    <p class="subtitle">Cartoon Network Classic • Single Panel • Chicas extremadamente delgadas + pechos y labios MASIVOS</p>
+    
+    <div class="perchance-note">
+      ✅ OPTIMIZADO PARA PERCHANCE AI<br>
+      Usa este prompt + el Negative Prompt que genera abajo.<br>
+      En Perchance elige estilo “Cinematic Cartoon” o “Drawn Anime” si está disponible. ¡Mejor calidad garantizada!
+    </div>
 
-    <!-- Campos específicos nuevos -->
+    <!-- Selectores específicos -->
     <div class="row">
       <div class="col-3">
         <label>Color de ojos</label>
@@ -117,9 +125,8 @@
       <div class="col-3">
         <label>Tamaño de ojos</label>
         <select id="eyeSize">
-          <option value="ojos pequeños">Pequeños</option>
-          <option value="ojos grandes" selected>Grandes</option>
-          <option value="ojos enormes y exagerados">Enormes y exagerados</option>
+          <option value="ojos grandes">Grandes</option>
+          <option value="ojos enormes y exagerados" selected>Enormes y exagerados</option>
           <option value="ojos masivos tipo Cartoon Network">Masivos (estilo CN)</option>
         </select>
       </div>
@@ -141,10 +148,10 @@
     <div class="row">
       <div class="col">
         <label>Estilo / Largo de cabello (opcional)</label>
-        <input type="text" id="hairStyle" placeholder="largo y ondulado, coletas altas, flequillo recto, coleta alta">
+        <input type="text" id="hairStyle" placeholder="largo y ondulado, coletas altas, flequillo recto">
       </div>
       <div class="col">
-        <label>Pose (elige una)</label>
+        <label>Pose</label>
         <select id="pose">
           <option value="de pie en pose seductora, cadera ladeada">De pie seductora (cadera ladeada)</option>
           <option value="sentada con piernas abiertas, mirando a cámara">Sentada con piernas abiertas</option>
@@ -152,7 +159,6 @@
           <option value="mirando por encima del hombro, culo en pompa">Mirando por encima del hombro</option>
           <option value="acostada de lado, apoyada en un brazo">Acostada de lado (sensual)</option>
           <option value="arrodillada, mirada hacia arriba">Arrodillada mirando hacia arriba</option>
-          <option value="saltando alegremente con brazos arriba">Saltando alegre (estilo CN)</option>
           <option value="apoyada contra la pared, pierna levantada">Apoyada contra pared</option>
         </select>
       </div>
@@ -166,19 +172,28 @@
           <option value="laboratorio loco lleno de inventos">Laboratorio loco</option>
           <option value="calle de Townsville estilo Powerpuff Girls">Calle de Townsville</option>
           <option value="cama gigante con sábanas rosas">Cama gigante (dormitorio)</option>
-          <option value="escenario de escenario de televisión con luces brillantes">Estudio de TV CN</option>
         </select>
       </div>
     </div>
 
-    <!-- Campos generales (mantengo los útiles) -->
-    <label>Detalles extra del cuerpo / expresión / fluidos (opcional)</label>
-    <textarea id="details" rows="2" placeholder="pechos masivos rebotando, labios hinchados brillantes, piel brillante, sudor cartoon, ahegao ligero"></textarea>
+    <label>Composición (mejora calidad en Perchance)</label>
+    <select id="composition">
+      <option value="full body view, centered composition, single panel cartoon illustration">Full body centrado (recomendado)</option>
+      <option value="medium shot, dynamic angle, single panel">Medium shot dinámico</option>
+      <option value="close-up face and upper body, dramatic angle">Close-up cara y torso</option>
+    </select>
+
+    <label>Detalles extra del cuerpo / expresión / fluidos (opcional - usa pesos si quieres más énfasis)</label>
+    <textarea id="details" rows="2" placeholder="piel brillante, sudor cartoon, ahegao ligero, (pechos rebotando:1.3)"></textarea>
 
     <div class="row">
       <div class="col">
-        <label>Calidad y detalles técnicos</label>
-        <input type="text" id="quality" value="masterpiece, best quality, highly detailed, sharp black outlines, vibrant saturated colors, single panel">
+        <label>Nivel de calidad (Perchance booster)</label>
+        <select id="qualityLevel">
+          <option value="standard">Estándar</option>
+          <option value="high" selected>Alta calidad (recomendado)</option>
+          <option value="ultra">Ultra (máxima nitidez y detalle)</option>
+        </select>
       </div>
     </div>
 
@@ -187,25 +202,25 @@
       <label>
         <input type="checkbox" id="nsfwToggle" checked>
         <span class="switch"><span class="slider"></span></span>
-        <strong> Modo NSFW Activado (añade términos explícitos cartoon)</strong>
+        <strong> Modo NSFW Activado (con pesos para Perchance)</strong>
       </label>
     </div>
 
-    <button onclick="generatePrompt()">Generar Prompt</button>
-    <button onclick="copyPrompt()">Copiar Prompt al portapapeles</button>
-    <button onclick="clearForm()" style="background:#666;">Limpiar todo</button>
+    <button onclick="generatePrompt()">Generar Prompt OPTIMIZADO para Perchance</button>
+    <button onclick="copyPrompt()">Copiar Prompt</button>
+    <button onclick="copyNegative()">Copiar Negative Prompt</button>
+    <button onclick="clearForm()" style="background:#666;">Limpiar</button>
 
-    <h2>Prompt generado (copia y pega en Stable Diffusion / Flux / Pony):</h2>
+    <h2>Prompt positivo (copia y pega en Perchance):</h2>
     <div class="result" id="output"></div>
 
-    <h2>Negative Prompt recomendado para estilo Cartoon Network:</h2>
-    <div class="result" id="negativeOutput">realistic, photorealistic, 3d, live action, blurry, low quality, bad anatomy, deformed, extra limbs, fused fingers, text, watermark, signature, ugly, poorly drawn face, poorly drawn hands, bad proportions, realistic skin texture</div>
+    <h2>Negative Prompt / Anti-Description (usa este en Perchance):</h2>
+    <div class="result" id="negativeOutput"></div>
   </div>
 
   <script>
     function generatePrompt() {
-      // Valores fijos del estilo que pediste
-      const baseStyle = "Cartoon Network classic style, single panel cartoon, bold black outlines, vibrant saturated colors, exaggerated proportions";
+      const baseStyle = "classic 1990s-2000s Cartoon Network animation style, single panel cartoon illustration, bold black ink outlines, cel shading, flat vibrant saturated colors, exaggerated cartoon proportions, (thick black lines:1.25)";
 
       const eyeSize = document.getElementById('eyeSize').value;
       const eyeColor = document.getElementById('eyeColor').value;
@@ -213,26 +228,27 @@
       const hairStyle = document.getElementById('hairStyle').value.trim();
       const pose = document.getElementById('pose').value;
       const environment = document.getElementById('environment').value;
+      const composition = document.getElementById('composition').value;
       const details = document.getElementById('details').value.trim();
-      const quality = document.getElementById('quality').value.trim();
+      const qualityLevel = document.getElementById('qualityLevel').value;
       const nsfw = document.getElementById('nsfwToggle').checked;
 
-      // Construcción del sujeto principal
-      let subject = `extremely thin slender cartoon girl, massive exaggerated breasts, huge plump shiny lips, ${eyeSize} ${eyeColor}, ${hairColor} hair`;
+      let subject = `extremely thin slender cartoon girl, (extremely thin:1.4), (skinny waist:1.3), massive exaggerated breasts, (massive exaggerated breasts:1.5), huge plump shiny lips, (huge plump shiny lips:1.4), ${eyeSize} ${eyeColor}, ${hairColor} hair`;
       if (hairStyle) subject += `, ${hairStyle}`;
 
-      // Prompt final
-      let prompt = `${baseStyle}, ${subject}, ${pose}, ${environment}`;
+      let qualityBoost = "";
+      if (qualityLevel === "high") qualityBoost = "masterpiece, best quality, highly detailed cartoon, sharp focus, intricate details, vibrant colors";
+      else if (qualityLevel === "ultra") qualityBoost = "masterpiece, best quality, ultra detailed cartoon, 8k cartoon illustration, razor sharp lines, perfect cel shading, vibrant saturated colors";
+
+      let prompt = `${baseStyle}, ${subject}, ${pose}, ${environment}, ${composition}`;
 
       if (details) prompt += `, ${details}`;
-      if (quality) prompt += `, ${quality}`;
+      if (qualityBoost) prompt += `, ${qualityBoost}`;
 
-      // Boost NSFW específico para cartoon (mantengo coherencia con el estilo)
       if (nsfw) {
-        prompt += ", nsfw, lewd, visible nipples through clothes or nude, pussy outline, wet pussy, ahegao face, tongue out, exaggerated body, massive tits bouncing";
+        prompt += ", nsfw, lewd, (visible erect nipples:1.2), (detailed pussy outline:1.2), wet glossy skin, ahegao face, tongue out, exaggerated body, (massive tits bouncing:1.3)";
       }
 
-      // Limpieza de comas dobles
       prompt = prompt.replace(/,\s*,/g, ',').trim();
 
       document.getElementById('output').textContent = prompt;
@@ -241,24 +257,27 @@
     function copyPrompt() {
       const text = document.getElementById('output').textContent;
       if (text) {
-        navigator.clipboard.writeText(text).then(() => {
-          alert('✅ ¡Prompt copiado al portapapeles! Pégalo directamente en tu generador de imágenes.');
-        });
+        navigator.clipboard.writeText(text).then(() => alert('✅ Prompt copiado! Pégalo en Perchance.'));
+      }
+    }
+
+    function copyNegative() {
+      const text = document.getElementById('negativeOutput').textContent;
+      if (text) {
+        navigator.clipboard.writeText(text).then(() => alert('✅ Negative Prompt copiado! Úsalo en el campo Anti-Description de Perchance.'));
       }
     }
 
     function clearForm() {
-      document.getElementById('eyeSize').value = 'ojos grandes';
-      document.getElementById('eyeColor').value = 'azules brillantes';
-      document.getElementById('hairColor').value = 'rosa chicle';
-      document.getElementById('hairStyle').value = '';
-      document.getElementById('pose').value = 'de pie en pose seductora, cadera ladeada';
-      document.getElementById('environment').value = 'habitación colorida con posters';
-      document.getElementById('details').value = '';
       document.getElementById('output').textContent = '';
     }
 
-    // Generar un ejemplo al cargar la página
+    // Negative Prompt optimizado para Perchance (evita realismo y errores comunes)
+    const defaultNegative = `realistic, photorealistic, 3d render, live action, blurry, low quality, bad anatomy, deformed, extra limbs, fused fingers, text, watermark, signature, ugly, poorly drawn face, realistic skin texture, lowres, jpeg artifacts, overexposed, underexposed, bad proportions, realistic shading`;
+
+    document.getElementById('negativeOutput').textContent = defaultNegative;
+
+    // Generar ejemplo al cargar
     window.onload = () => {
       generatePrompt();
     };
