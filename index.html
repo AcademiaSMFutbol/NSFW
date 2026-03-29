@@ -3,104 +3,265 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NSFW Simple Generator</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Generador de Prompts - Cartoon Network Classic (Single Panel NSFW)</title>
   <style>
-    body { background: #111; color: #eee; }
-    .img-container { max-width: 100%; margin: 20px auto; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #16213e;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    h1 { text-align: center; color: #ff69b4; margin-bottom: 10px; }
+    .subtitle { text-align: center; color: #00ffcc; font-size: 18px; margin-bottom: 30px; }
+    label { display: block; margin: 15px 0 5px; font-weight: bold; }
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #0f3460;
+      color: white;
+      font-size: 16px;
+    }
+    .row { display: flex; gap: 20px; flex-wrap: wrap; }
+    .col { flex: 1; min-width: 280px; }
+    .col-3 { flex: 1; min-width: 200px; }
+    button {
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 20px 10px 10px 0;
+    }
+    button:hover { background: #ff1493; }
+    .result {
+      background: #0a2540;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      white-space: pre-wrap;
+      font-family: monospace;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #ccc;
+      transition: .4s;
+      border-radius: 34px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider { background: #ff1493; }
+    input:checked + .slider:before { transform: translateX(26px); }
+    .preset-btn {
+      background: #00ffcc;
+      color: #16213e;
+      padding: 8px 15px;
+      font-size: 14px;
+      margin: 5px;
+    }
   </style>
 </head>
-<body class="min-h-screen p-6">
-  <div class="max-w-2xl mx-auto text-center">
-    <h1 class="text-4xl font-bold mb-6 text-pink-500">🔞 NSFW Generator Simple</h1>
-    <p class="mb-8 text-zinc-400">Escribe lo que quieras (sin censura) y pulsa Generar</p>
+<body>
+  <div class="container">
+    <h1>🔥 Generador de Prompts</h1>
+    <p class="subtitle">Cartoon Network Classic • Single Panel • Chicas extremadamente delgadas con pechos y labios MASIVOS</p>
 
-    <textarea id="prompt" rows="5"
-      class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl p-5 text-lg focus:outline-none focus:border-pink-500"
-      placeholder="Mujer desnuda realista, piel húmeda, pose sensual, detalles ultra realistas, iluminación suave..."></textarea>
-
-    <div class="mt-6 flex gap-4 justify-center">
-      <button onclick="generate()" 
-        class="bg-pink-600 hover:bg-pink-700 px-10 py-4 rounded-2xl font-bold text-xl transition">
-        Generar Imagen NSFW
-      </button>
-      <button onclick="clearAll()" 
-        class="bg-zinc-700 hover:bg-zinc-600 px-6 py-4 rounded-2xl font-bold transition">
-        Limpiar
-      </button>
+    <!-- Campos específicos nuevos -->
+    <div class="row">
+      <div class="col-3">
+        <label>Color de ojos</label>
+        <select id="eyeColor">
+          <option value="azules brillantes">Azules brillantes</option>
+          <option value="verdes intensos">Verdes intensos</option>
+          <option value="marrón chocolate">Marrón chocolate</option>
+          <option value="rojos brillantes">Rojos brillantes</option>
+          <option value="morados hipnóticos">Morados hipnóticos</option>
+          <option value="rosas pastel">Rosas pastel</option>
+          <option value="amarillos dorados">Amarillos dorados</option>
+          <option value="negros profundos">Negros profundos</option>
+        </select>
+      </div>
+      <div class="col-3">
+        <label>Tamaño de ojos</label>
+        <select id="eyeSize">
+          <option value="ojos pequeños">Pequeños</option>
+          <option value="ojos grandes" selected>Grandes</option>
+          <option value="ojos enormes y exagerados">Enormes y exagerados</option>
+          <option value="ojos masivos tipo Cartoon Network">Masivos (estilo CN)</option>
+        </select>
+      </div>
+      <div class="col-3">
+        <label>Color de cabello</label>
+        <select id="hairColor">
+          <option value="rubio platino">Rubio platino</option>
+          <option value="negro azabache">Negro azabache</option>
+          <option value="rojo fuego">Rojo fuego</option>
+          <option value="rosa chicle">Rosa chicle</option>
+          <option value="azul eléctrico">Azul eléctrico</option>
+          <option value="verde lima">Verde lima</option>
+          <option value="morado oscuro">Morado oscuro</option>
+          <option value="blanco nieve">Blanco nieve</option>
+        </select>
+      </div>
     </div>
 
-    <div id="loading" class="hidden mt-8 text-pink-400 text-xl">Generando... (puede tardar unos segundos)</div>
+    <div class="row">
+      <div class="col">
+        <label>Estilo / Largo de cabello (opcional)</label>
+        <input type="text" id="hairStyle" placeholder="largo y ondulado, coletas altas, flequillo recto, coleta alta">
+      </div>
+      <div class="col">
+        <label>Pose (elige una)</label>
+        <select id="pose">
+          <option value="de pie en pose seductora, cadera ladeada">De pie seductora (cadera ladeada)</option>
+          <option value="sentada con piernas abiertas, mirando a cámara">Sentada con piernas abiertas</option>
+          <option value="posando con manos en caderas, pecho hacia adelante">Manos en caderas, pecho al frente</option>
+          <option value="mirando por encima del hombro, culo en pompa">Mirando por encima del hombro</option>
+          <option value="acostada de lado, apoyada en un brazo">Acostada de lado (sensual)</option>
+          <option value="arrodillada, mirada hacia arriba">Arrodillada mirando hacia arriba</option>
+          <option value="saltando alegremente con brazos arriba">Saltando alegre (estilo CN)</option>
+          <option value="apoyada contra la pared, pierna levantada">Apoyada contra pared</option>
+        </select>
+      </div>
+      <div class="col">
+        <label>Ambiente / Escenario (single panel)</label>
+        <select id="environment">
+          <option value="fondo clásico Cartoon Network, habitación colorida con posters">Habitación CN clásica</option>
+          <option value="ciudad futurista estilo Dexter's Laboratory">Ciudad futurista (Dexter style)</option>
+          <option value="bosque mágico con árboles cartoon">Bosque mágico</option>
+          <option value="playa soleada con palmeras exageradas">Playa soleada</option>
+          <option value="laboratorio loco lleno de inventos">Laboratorio loco</option>
+          <option value="calle de Townsville estilo Powerpuff Girls">Calle de Townsville</option>
+          <option value="cama gigante con sábanas rosas">Cama gigante (dormitorio)</option>
+          <option value="escenario de escenario de televisión con luces brillantes">Estudio de TV CN</option>
+        </select>
+      </div>
+    </div>
 
-    <div id="result" class="mt-10 img-container"></div>
+    <!-- Campos generales (mantengo los útiles) -->
+    <label>Detalles extra del cuerpo / expresión / fluidos (opcional)</label>
+    <textarea id="details" rows="2" placeholder="pechos masivos rebotando, labios hinchados brillantes, piel brillante, sudor cartoon, ahegao ligero"></textarea>
 
-    <p class="text-xs text-zinc-500 mt-12">
-      Gratuito • Sin registro • Ilimitado • Totalmente sin censura (usa Perchance AI)
-    </p>
+    <div class="row">
+      <div class="col">
+        <label>Calidad y detalles técnicos</label>
+        <input type="text" id="quality" value="masterpiece, best quality, highly detailed, sharp black outlines, vibrant saturated colors, single panel">
+      </div>
+    </div>
+
+    <!-- Interruptor NSFW -->
+    <div style="margin: 20px 0;">
+      <label>
+        <input type="checkbox" id="nsfwToggle" checked>
+        <span class="switch"><span class="slider"></span></span>
+        <strong> Modo NSFW Activado (añade términos explícitos cartoon)</strong>
+      </label>
+    </div>
+
+    <button onclick="generatePrompt()">Generar Prompt</button>
+    <button onclick="copyPrompt()">Copiar Prompt al portapapeles</button>
+    <button onclick="clearForm()" style="background:#666;">Limpiar todo</button>
+
+    <h2>Prompt generado (copia y pega en Stable Diffusion / Flux / Pony):</h2>
+    <div class="result" id="output"></div>
+
+    <h2>Negative Prompt recomendado para estilo Cartoon Network:</h2>
+    <div class="result" id="negativeOutput">realistic, photorealistic, 3d, live action, blurry, low quality, bad anatomy, deformed, extra limbs, fused fingers, text, watermark, signature, ugly, poorly drawn face, poorly drawn hands, bad proportions, realistic skin texture</div>
   </div>
 
   <script>
-    async function generate() {
-      const prompt = document.getElementById('prompt').value.trim();
-      if (!prompt) {
-        alert("¡Escribe algo en el prompt!");
-        return;
+    function generatePrompt() {
+      // Valores fijos del estilo que pediste
+      const baseStyle = "Cartoon Network classic style, single panel cartoon, bold black outlines, vibrant saturated colors, exaggerated proportions";
+
+      const eyeSize = document.getElementById('eyeSize').value;
+      const eyeColor = document.getElementById('eyeColor').value;
+      const hairColor = document.getElementById('hairColor').value;
+      const hairStyle = document.getElementById('hairStyle').value.trim();
+      const pose = document.getElementById('pose').value;
+      const environment = document.getElementById('environment').value;
+      const details = document.getElementById('details').value.trim();
+      const quality = document.getElementById('quality').value.trim();
+      const nsfw = document.getElementById('nsfwToggle').checked;
+
+      // Construcción del sujeto principal
+      let subject = `extremely thin slender cartoon girl, massive exaggerated breasts, huge plump shiny lips, ${eyeSize} ${eyeColor}, ${hairColor} hair`;
+      if (hairStyle) subject += `, ${hairStyle}`;
+
+      // Prompt final
+      let prompt = `${baseStyle}, ${subject}, ${pose}, ${environment}`;
+
+      if (details) prompt += `, ${details}`;
+      if (quality) prompt += `, ${quality}`;
+
+      // Boost NSFW específico para cartoon (mantengo coherencia con el estilo)
+      if (nsfw) {
+        prompt += ", nsfw, lewd, visible nipples through clothes or nude, pussy outline, wet pussy, ahegao face, tongue out, exaggerated body, massive tits bouncing";
       }
 
-      document.getElementById('loading').classList.remove('hidden');
-      document.getElementById('result').innerHTML = '';
+      // Limpieza de comas dobles
+      prompt = prompt.replace(/,\s*,/g, ',').trim();
 
-      // URL directa de Perchance (funciona sin API key)
-      const url = `https://perchance.org/api/aiTextToImage?prompt=${encodeURIComponent(prompt)}&style=Realistic%20Humans&nsfw=1`;
-
-      try {
-        const res = await fetch(url);
-        const data = await res.json();
-
-        if (data && data.images && data.images.length > 0) {
-          const imgUrl = data.images[0].url || data.images[0];
-
-          const img = document.createElement('img');
-          img.src = imgUrl;
-          img.className = "rounded-3xl shadow-2xl max-w-full border border-zinc-700";
-          img.alt = prompt;
-
-          document.getElementById('result').appendChild(img);
-
-          // Botón para descargar
-          const downloadBtn = document.createElement('button');
-          downloadBtn.textContent = "⬇️ Descargar imagen";
-          downloadBtn.className = "mt-6 bg-zinc-800 hover:bg-zinc-700 px-8 py-3 rounded-xl transition";
-          downloadBtn.onclick = () => {
-            const a = document.createElement('a');
-            a.href = imgUrl;
-            a.download = "nsfw-image.png";
-            a.click();
-          };
-          document.getElementById('result').appendChild(downloadBtn);
-        } else {
-          document.getElementById('result').innerHTML = `<p class="text-red-400">No se pudo generar la imagen. Inténtalo de nuevo.</p>`;
-        }
-      } catch (e) {
-        console.error(e);
-        document.getElementById('result').innerHTML = `<p class="text-red-400">Error de conexión. Prueba más tarde o usa otro generador.</p>`;
-      }
-
-      document.getElementById('loading').classList.add('hidden');
+      document.getElementById('output').textContent = prompt;
     }
 
-    function clearAll() {
-      document.getElementById('prompt').value = '';
-      document.getElementById('result').innerHTML = '';
+    function copyPrompt() {
+      const text = document.getElementById('output').textContent;
+      if (text) {
+        navigator.clipboard.writeText(text).then(() => {
+          alert('✅ ¡Prompt copiado al portapapeles! Pégalo directamente en tu generador de imágenes.');
+        });
+      }
     }
 
-    // Atajo: presiona Enter en el textarea para generar
-    document.getElementById('prompt').addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' && !e.shiftKey) {
-        e.preventDefault();
-        generate();
-      }
-    });
+    function clearForm() {
+      document.getElementById('eyeSize').value = 'ojos grandes';
+      document.getElementById('eyeColor').value = 'azules brillantes';
+      document.getElementById('hairColor').value = 'rosa chicle';
+      document.getElementById('hairStyle').value = '';
+      document.getElementById('pose').value = 'de pie en pose seductora, cadera ladeada';
+      document.getElementById('environment').value = 'habitación colorida con posters';
+      document.getElementById('details').value = '';
+      document.getElementById('output').textContent = '';
+    }
+
+    // Generar un ejemplo al cargar la página
+    window.onload = () => {
+      generatePrompt();
+    };
   </script>
 </body>
 </html>
