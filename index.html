@@ -3,230 +3,173 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generador de Prompts - Cartoon Network Classic (NSFW EXPLÍCITO + Duo)</title>
+  <title>Generador de Prompts - Cartoon Network Classic (NSFW EXPLÍCITO + CINEMÁTICO PROFESIONAL)</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #1a1a2e;
-      color: #eee;
-      margin: 0;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      background: #16213e;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1a1a2e; color: #eee; margin: 0; padding: 20px; line-height: 1.6; }
+    .container { max-width: 1150px; margin: 0 auto; background: #16213e; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
     h1 { text-align: center; color: #ff1493; margin-bottom: 5px; }
     .subtitle { text-align: center; color: #00ffcc; font-size: 19px; margin-bottom: 30px; }
-    .perchance-note {
-      background: #ff1493;
-      color: #fff;
-      padding: 14px;
-      border-radius: 8px;
-      text-align: center;
-      font-weight: bold;
-      margin-bottom: 25px;
-    }
+    .perchance-note { background: #ff1493; color: #fff; padding: 14px; border-radius: 8px; text-align: center; font-weight: bold; margin-bottom: 25px; }
     label { display: block; margin: 15px 0 5px; font-weight: bold; }
-    input, textarea, select {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      background: #0f3460;
-      color: white;
-      font-size: 16px;
-    }
+    input, textarea, select { width: 100%; padding: 12px; border: none; border-radius: 8px; background: #0f3460; color: white; font-size: 16px; }
     .row { display: flex; gap: 20px; flex-wrap: wrap; }
     .col { flex: 1; min-width: 280px; }
     .col-3 { flex: 1; min-width: 200px; }
     .section { margin-top: 25px; padding: 15px; background: #0a2540; border-radius: 10px; }
-    button {
-      background: #ff1493;
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      font-size: 18px;
-      border-radius: 8px;
-      cursor: pointer;
-      margin: 20px 10px 10px 0;
-    }
+    button { background: #ff1493; color: white; border: none; padding: 15px 30px; font-size: 18px; border-radius: 8px; cursor: pointer; margin: 20px 10px 10px 0; }
     button:hover { background: #ff69b4; }
-    .result {
-      background: #0a2540;
-      padding: 20px;
-      border-radius: 8px;
-      margin-top: 20px;
-      white-space: pre-wrap;
-      font-family: monospace;
-      font-size: 15px;
-      line-height: 1.4;
-    }
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 60px;
-      height: 34px;
-    }
+    .result { background: #0a2540; padding: 20px; border-radius: 8px; margin-top: 20px; white-space: pre-wrap; font-family: monospace; font-size: 15px; line-height: 1.4; }
+    .switch { position: relative; display: inline-block; width: 60px; height: 34px; }
     .switch input { opacity: 0; width: 0; height: 0; }
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: #ccc;
-      transition: .4s;
-      border-radius: 34px;
-    }
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 26px;
-      width: 26px;
-      left: 4px;
-      bottom: 4px;
-      background: white;
-      transition: .4s;
-      border-radius: 50%;
-    }
+    .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background: #ccc; transition: .4s; border-radius: 34px; }
+    .slider:before { position: absolute; content: ""; height: 26px; width: 26px; left: 4px; bottom: 4px; background: white; transition: .4s; border-radius: 50%; }
     input:checked + .slider { background: #ff1493; }
     input:checked + .slider:before { transform: translateX(26px); }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>🔥 Generador de Prompts NSFW EXPLÍCITO</h1>
-    <p class="subtitle">Cartoon Network Classic • Single Panel • Chicas delgadísimas + pechos y labios MASIVOS • Poses SEXUALES explícitas + Duo</p>
+    <h1>🔥 Generador de Prompts NSFW EXPLÍCITO + CINEMÁTICO PROFESIONAL</h1>
+    <p class="subtitle">Cartoon Network Classic • Single Panel • Chicas extremadamente delgadas + pechos y labios MASIVOS • Todo en INGLÉS para Perchance</p>
     
     <div class="perchance-note">
-      ✅ OPTIMIZADO PARA PERCHANCE AI (usa pesos fuertes)<br>
-      Copia el Prompt + Negative Prompt (Anti-Description). ¡Calidad máxima garantizada!
+      ✅ TODOS LOS PROMPTS SALEN 100% EN INGLÉS<br>
+      ✅ Detalles mejorados de cara y cuerpo<br>
+      ✅ Acabado CINEMÁTICO PROFESIONAL (high production value + cinematic lighting)<br>
+      Copia Prompt + Negative directamente en Perchance. ¡Resultados mucho más nítidos y profesionales!
     </div>
 
     <!-- Número de personajes -->
     <div class="section">
-      <label>Número de personajes</label>
+      <label>Number of characters</label>
       <select id="numCharacters" onchange="toggleSecondCharacter()">
-        <option value="1">Solo 1 chica (NSFW solo)</option>
-        <option value="2-girl" selected>Dos chicas (lesbico explícito)</option>
-        <option value="2-boy">Chica + Chico (hetero explícito)</option>
+        <option value="1">1 Girl (solo NSFW)</option>
+        <option value="2-girl" selected>2 Girls (lesbian explicit)</option>
+        <option value="2-boy">Girl + Boy (hetero explicit)</option>
       </select>
     </div>
 
-    <!-- Personaje 1 (siempre chica principal) -->
+    <!-- Personaje 1 -->
     <div class="section">
-      <h3>👧 Personaje 1 (Chica principal - delgadísima y exagerada)</h3>
+      <h3>👧 Character 1 (Main extremely thin girl)</h3>
       <div class="row">
         <div class="col-3">
-          <label>Color de ojos</label>
+          <label>Eye color</label>
           <select id="eyeColor1">
-            <option value="azules brillantes">Azules brillantes</option>
-            <option value="verdes intensos">Verdes intensos</option>
-            <option value="rojos brillantes">Rojos brillantes</option>
-            <option value="morados hipnóticos">Morados hipnóticos</option>
-            <option value="rosas pastel">Rosas pastel</option>
-            <option value="amarillos dorados">Amarillos dorados</option>
-            <option value="negros profundos">Negros profundos</option>
-            <option value="corazón shaped pupils">Pupilas en forma de corazón</option>
+            <option value="bright blue eyes">Bright blue eyes</option>
+            <option value="intense green eyes">Intense green eyes</option>
+            <option value="bright red eyes">Bright red eyes</option>
+            <option value="hypnotic purple eyes">Hypnotic purple eyes</option>
+            <option value="pastel pink eyes">Pastel pink eyes</option>
+            <option value="golden yellow eyes">Golden yellow eyes</option>
+            <option value="deep black eyes">Deep black eyes</option>
+            <option value="heart-shaped pupils">Heart-shaped pupils</option>
           </select>
         </div>
         <div class="col-3">
-          <label>Tamaño de ojos</label>
+          <label>Eye size</label>
           <select id="eyeSize1">
-            <option value="ojos enormes y exagerados" selected>Enormes y exagerados</option>
-            <option value="ojos masivos tipo Cartoon Network">Masivos CN style</option>
+            <option value="enormous exaggerated eyes" selected>Enormous exaggerated eyes</option>
+            <option value="massive Cartoon Network style eyes">Massive Cartoon Network style eyes</option>
           </select>
         </div>
         <div class="col-3">
-          <label>Color de cabello</label>
+          <label>Hair color</label>
           <select id="hairColor1">
-            <option value="rosa chicle">Rosa chicle</option>
-            <option value="rubio platino">Rubio platino</option>
-            <option value="negro azabache">Negro azabache</option>
-            <option value="rojo fuego">Rojo fuego</option>
-            <option value="azul eléctrico">Azul eléctrico</option>
-            <option value="verde lima">Verde lima</option>
-            <option value="morado oscuro">Morado oscuro</option>
-            <option value="blanco nieve">Blanco nieve</option>
+            <option value="bubblegum pink hair">Bubblegum pink hair</option>
+            <option value="platinum blonde hair">Platinum blonde hair</option>
+            <option value="jet black hair">Jet black hair</option>
+            <option value="fiery red hair">Fiery red hair</option>
+            <option value="electric blue hair">Electric blue hair</option>
+            <option value="lime green hair">Lime green hair</option>
+            <option value="deep purple hair">Deep purple hair</option>
+            <option value="snow white hair">Snow white hair</option>
           </select>
         </div>
       </div>
-      <label>Estilo de cabello</label>
-      <input type="text" id="hairStyle1" placeholder="coletas altas, flequillo, cabello largo suelto, coleta alta">
+
+      <div class="row">
+        <div class="col-3">
+          <label>Face shape</label>
+          <select id="faceShape1">
+            <option value="heart-shaped face, soft cute cheeks">Heart-shaped face, soft cute cheeks</option>
+            <option value="round chibi face, big expressive features">Round chibi face, big expressive features</option>
+            <option value="sharp jawline, seductive cartoon face">Sharp jawline, seductive cartoon face</option>
+            <option value="oval doll-like face, perfect symmetry">Oval doll-like face, perfect symmetry</option>
+          </select>
+        </div>
+        <div class="col-3">
+          <label>Hair style</label>
+          <input type="text" id="hairStyle1" placeholder="long wavy, high pigtails, straight bangs">
+        </div>
+      </div>
     </div>
 
-    <!-- Personaje 2 (solo se muestra si duo) -->
+    <!-- Personaje 2 (solo si duo) -->
     <div id="secondCharacterSection" class="section">
-      <h3>👤 Personaje 2</h3>
+      <h3>👤 Character 2</h3>
       <div class="row">
         <div class="col">
-          <label>Género del personaje 2</label>
+          <label>Gender of character 2</label>
           <select id="gender2">
-            <option value="chica delgada">Chica delgada (lesbico)</option>
-            <option value="chico delgado">Chico delgado (hetero)</option>
+            <option value="extremely thin slender cartoon girl">Extremely thin slender cartoon girl (lesbian)</option>
+            <option value="slim cartoon boy with visible erect penis">Slim cartoon boy (hetero)</option>
           </select>
         </div>
         <div class="col-3">
-          <label>Color de ojos</label>
+          <label>Eye color</label>
           <select id="eyeColor2">
-            <option value="azules brillantes">Azules brillantes</option>
-            <option value="verdes intensos">Verdes intensos</option>
-            <option value="rojos brillantes">Rojos brillantes</option>
-            <option value="morados hipnóticos">Morados hipnóticos</option>
+            <option value="bright blue eyes">Bright blue eyes</option>
+            <option value="intense green eyes">Intense green eyes</option>
+            <option value="hypnotic purple eyes">Hypnotic purple eyes</option>
           </select>
         </div>
         <div class="col-3">
-          <label>Color de cabello</label>
+          <label>Hair color</label>
           <select id="hairColor2">
-            <option value="rubio platino">Rubio platino</option>
-            <option value="negro azabache">Negro azabache</option>
-            <option value="rojo fuego">Rojo fuego</option>
-            <option value="azul eléctrico">Azul eléctrico</option>
+            <option value="platinum blonde hair">Platinum blonde hair</option>
+            <option value="jet black hair">Jet black hair</option>
+            <option value="fiery red hair">Fiery red hair</option>
+            <option value="electric blue hair">Electric blue hair</option>
           </select>
         </div>
       </div>
-      <label>Estilo de cabello (Personaje 2)</label>
-      <input type="text" id="hairStyle2" placeholder="corto desordenado, largo liso">
+      <label>Hair style (Character 2)</label>
+      <input type="text" id="hairStyle2" placeholder="short messy, long straight">
     </div>
 
-    <!-- Pose explícita -->
+    <!-- Pose explícita (todo en inglés) -->
     <div class="section">
-      <label>🔥 Pose / Interacción SEXUAL explícita (single panel)</label>
-      <select id="pose">
-        <!-- Se rellenará dinámicamente con JS según número de personajes -->
-      </select>
+      <label>🔥 Explicit sexual pose / interaction (single panel)</label>
+      <select id="pose"></select>
     </div>
 
     <!-- Ambiente -->
     <div class="row">
       <div class="col">
-        <label>Ambiente / Escenario (single panel)</label>
+        <label>Environment / Scene (single panel)</label>
         <select id="environment">
-          <option value="habitación CN clásica con posters y cama deshecha">Habitación CN con cama deshecha</option>
-          <option value="laboratorio loco con tubos y camas">Laboratorio loco (Dexter style)</option>
-          <option value="cama gigante rosa con juguetes sexuales cartoon">Cama gigante con juguetes</option>
-          <option value="calle de Townsville de noche con luces neón">Calle de Townsville de noche</option>
-          <option value="bosque mágico con flores brillantes y césped">Bosque mágico</option>
-          <option value="playa soleada con olas cartoon">Playa soleada</option>
-          <option value="escenario de TV CN con focos y público borroso">Estudio de TV CN</option>
-          <option value="sofá viejo en sala de estar cartoon">Sofá viejo en sala</option>
+          <option value="classic Cartoon Network bedroom with messy bed and posters">Classic CN bedroom with messy bed and posters</option>
+          <option value="mad scientist laboratory with glowing tubes and bed">Mad scientist laboratory with glowing tubes</option>
+          <option value="huge pink bed with cartoon sex toys scattered">Huge pink bed with cartoon sex toys</option>
+          <option value="Townsville street at night with neon lights">Townsville street at night with neon lights</option>
+          <option value="magical glowing forest with soft cinematic lighting">Magical glowing forest with soft cinematic lighting</option>
+          <option value="sunny beach with exaggerated cartoon waves">Sunny beach with exaggerated cartoon waves</option>
+          <option value="TV studio stage with professional cinematic spotlights">TV studio stage with professional cinematic spotlights</option>
         </select>
       </div>
     </div>
 
-    <label>Detalles extra explícitos (fluidos, expresiones, etc. - usa pesos si quieres más fuerza)</label>
-    <textarea id="details" rows="3" placeholder="(ahegao extremo:1.4), lengua fuera larga, ojos en blanco, semen espeso dripping, pussy juice dripping, pechos rebotando, sudor cartoon brillante"></textarea>
+    <!-- Detalles extra -->
+    <label>Extra explicit details (fluids, expressions, body – use weights for emphasis)</label>
+    <textarea id="details" rows="3" placeholder="(extreme ahegao:1.5), long tongue out, rolling eyes, thick pussy juice dripping, thick semen dripping, glossy wet skin, sweat drops, bouncing massive breasts"></textarea>
 
     <div class="row">
       <div class="col">
-        <label>Nivel de calidad (Perchance booster)</label>
+        <label>Quality level (Perchance cinematic boost)</label>
         <select id="qualityLevel">
-          <option value="high" selected>Alta calidad</option>
-          <option value="ultra">Ultra (máxima nitidez)</option>
+          <option value="professional" selected>Professional Cinematic</option>
+          <option value="ultra">Ultra Cinematic Masterpiece</option>
         </select>
       </div>
     </div>
@@ -235,11 +178,11 @@
       <label>
         <input type="checkbox" id="nsfwToggle" checked>
         <span class="switch"><span class="slider"></span></span>
-        <strong> Modo NSFW EXPLÍCITO ACTIVADO (pesos fuertes para Perchance)</strong>
+        <strong>EXPLICIT NSFW MODE ON (strong weights for Perchance)</strong>
       </label>
     </div>
 
-    <button onclick="generatePrompt()">Generar Prompt NSFW EXPLÍCITO</button>
+    <button onclick="generatePrompt()">Generar Prompt 100% INGLÉS + CINEMÁTICO</button>
     <button onclick="copyPrompt()">Copiar Prompt</button>
     <button onclick="copyNegative()">Copiar Negative Prompt</button>
     <button onclick="clearForm()" style="background:#666;">Limpiar</button>
@@ -247,39 +190,36 @@
     <h2>Prompt positivo (copia y pega en Perchance):</h2>
     <div class="result" id="output"></div>
 
-    <h2>Negative Prompt / Anti-Description (usa este en Perchance):</h2>
+    <h2>Negative Prompt / Anti-Description:</h2>
     <div class="result" id="negativeOutput"></div>
   </div>
 
   <script>
     const explicitPoses = {
       1: [
-        {value: "chica delgadísima de pie con piernas abiertas, dedos metidos en pussy, ahegao extremo", text: "Solo: Masturbación dedos en pussy (piernas abiertas)"},
-        {value: "chica delgadísima arrodillada, lengua fuera larga, ahegao, masturbando con ambas manos", text: "Solo: Arrodillada masturbando (ahegao)"},
-        {value: "chica delgadísima acostada de espalda, piernas abiertas al máximo, pussy expuesta y mojada", text: "Solo: Misionero solo (piernas abiertas)"},
-        {value: "chica delgadísima en four legs doggystyle, culo en pompa, pussy dripping", text: "Solo: Doggystyle (culo en pompa)"},
-        {value: "chica delgadísima sentada en cara de cámara, piernas abiertas, pussy close-up", text: "Solo: Sentada en cara (pussy close-up)"}
+        {value: "kneeling in doggystyle position, ass up high, legs spread wide, pussy fully exposed and dripping", text: "Solo: Doggystyle (ass up, pussy exposed)"},
+        {value: "lying on back in missionary, legs spread maximum, pussy close-up dripping wet", text: "Solo: Missionary legs wide open"},
+        {value: "sitting on face (facesitting), grinding pussy on tongue, extreme ahegao", text: "Solo: Facesitting self"},
+        {value: "on all fours with back arched, pussy and ass presented to camera", text: "Solo: All fours presenting"},
+        {value: "kneeling giving deep blowjob, throat bulge, ahegao eyes", text: "Solo: Deep blowjob kneeling"}
       ],
       "2-girl": [
-        {value: "chica1 montando cara de chica2 (facesitting), lengua de chica2 dentro de pussy, ahegao ambas", text: "Duo chicas: Facesitting + lamiendo pussy"},
-        {value: "chica1 y chica2 en 69 position, lamiendo pussy mutuamente, ahegao", text: "Duo chicas: 69 lamiendo pussy"},
-        {value: "chica1 tribbing pussy contra pussy de chica2, pechos masivos apretados, fluidos", text: "Duo chicas: Tribbing pussy contra pussy"},
-        {value: "chica1 arrodillada chupando pezones de chica2, dedos en pussy", text: "Duo chicas: Chupando pezones + dedos"},
-        {value: "chica1 y chica2 scissoring, piernas entrelazadas, ahegao y gemidos cartoon", text: "Duo chicas: Scissoring explícito"}
+        {value: "girl1 facesitting on girl2, girl2 tongue deep inside pussy, mutual extreme ahegao", text: "2 Girls: Facesitting + licking"},
+        {value: "69 position, both licking each others pussy passionately, ahegao faces", text: "2 Girls: 69 mutual oral"},
+        {value: "tribbing pussy against pussy, legs entangled, massive breasts pressed together", text: "2 Girls: Tribbing"},
+        {value: "girl1 sucking girl2 nipples while fingering her pussy, both moaning", text: "2 Girls: Nipple sucking + fingering"}
       ],
       "2-boy": [
-        {value: "chica montando al chico en cowgirl position, pussy penetrada profunda, pechos rebotando, ahegao", text: "Duo hetero: Cowgirl (montando)"},
-        {value: "chica en doggystyle, chico penetrándola por detrás, culo en pompa, semen dripping", text: "Duo hetero: Doggystyle penetración"},
-        {value: "chica arrodillada haciendo blowjob profundo al chico, garganta abultada, ahegao", text: "Duo hetero: Blowjob garganta profunda"},
-        {value: "chica en missionary, chico encima penetrándola, piernas abiertas al máximo, ahegao", text: "Duo hetero: Missionary"},
-        {value: "chica sentada en regazo del chico (reverse cowgirl), pussy penetrada, pechos masivos", text: "Duo hetero: Reverse cowgirl"}
+        {value: "girl riding boy in cowgirl position, deep penetration, massive breasts bouncing, extreme ahegao", text: "Hetero: Cowgirl deep penetration"},
+        {value: "girl in doggystyle, boy fucking her from behind, ass up, creampie visible", text: "Hetero: Doggystyle creampie"},
+        {value: "girl on back missionary, boy on top deep thrusting, legs over shoulders", text: "Hetero: Missionary legs over shoulders"},
+        {value: "girl kneeling giving sloppy deep blowjob, throat bulge, ahegao", text: "Hetero: Blowjob deep throat"}
       ]
     };
 
     function toggleSecondCharacter() {
       const num = document.getElementById('numCharacters').value;
-      const section = document.getElementById('secondCharacterSection');
-      section.style.display = (num === '1') ? 'none' : 'block';
+      document.getElementById('secondCharacterSection').style.display = (num === '1') ? 'none' : 'block';
       updatePoseOptions();
     }
 
@@ -287,7 +227,6 @@
       const num = document.getElementById('numCharacters').value;
       const poseSelect = document.getElementById('pose');
       poseSelect.innerHTML = '';
-      
       const poses = explicitPoses[num] || explicitPoses[1];
       poses.forEach(p => {
         const opt = document.createElement('option');
@@ -298,31 +237,29 @@
     }
 
     function generatePrompt() {
-      const baseStyle = "classic 1990s-2000s Cartoon Network animation style, single panel cartoon illustration, bold black ink outlines, cel shading, flat vibrant saturated colors, exaggerated cartoon proportions, (thick black lines:1.3)";
+      // BASE STYLE – CINEMÁTICO PROFESIONAL + Cartoon Network
+      let baseStyle = "professional cinematic 1990s-2000s Cartoon Network animation style, single panel cartoon illustration, bold black ink outlines, perfect cel shading, vibrant saturated colors, exaggerated cartoon proportions, high production value, cinematic lighting, dramatic volumetric lighting, sharp professional details, thick black lines:1.35";
 
       const numChars = document.getElementById('numCharacters').value;
-      
-      // Personaje 1
+
+      // Character 1 – con detalles de cara y cuerpo mejorados
       const eyeSize1 = document.getElementById('eyeSize1').value;
       const eyeColor1 = document.getElementById('eyeColor1').value;
       const hairColor1 = document.getElementById('hairColor1').value;
+      const faceShape1 = document.getElementById('faceShape1').value;
       const hairStyle1 = document.getElementById('hairStyle1').value.trim();
-      
-      let subject1 = `extremely thin slender cartoon girl, (extremely thin:1.45), (skinny waist:1.35), massive exaggerated breasts, (massive exaggerated breasts:1.6), huge plump shiny lips, (huge plump shiny lips:1.5), ${eyeSize1} ${eyeColor1}, ${hairColor1} hair`;
+
+      let subject1 = `extremely thin slender cartoon girl, (extremely thin body:1.5), (skinny waist:1.4), (long slender legs:1.3), massive exaggerated breasts, (huge massive tits:1.65), enormous plump shiny lips, (${eyeSize1}:1.4), ${eyeColor1}, ${faceShape1}, ${hairColor1}`;
       if (hairStyle1) subject1 += `, ${hairStyle1}`;
 
+      // Character 2
       let subject2 = '';
       if (numChars !== '1') {
         const gender2 = document.getElementById('gender2').value;
         const eyeColor2 = document.getElementById('eyeColor2').value;
         const hairColor2 = document.getElementById('hairColor2').value;
         const hairStyle2 = document.getElementById('hairStyle2').value.trim();
-        
-        if (gender2 === 'chica delgada') {
-          subject2 = `, second extremely thin slender cartoon girl, massive exaggerated breasts, huge plump shiny lips, ${eyeColor2} eyes, ${hairColor2} hair`;
-        } else {
-          subject2 = `, slim cartoon boy, (visible erect penis:1.4), ${eyeColor2} eyes, ${hairColor2} hair`;
-        }
+        subject2 = `, ${gender2}, ${eyeColor2}, ${hairColor2}`;
         if (hairStyle2) subject2 += `, ${hairStyle2}`;
       }
 
@@ -333,15 +270,15 @@
       const nsfw = document.getElementById('nsfwToggle').checked;
 
       let qualityBoost = qualityLevel === "ultra" 
-        ? "masterpiece, best quality, ultra detailed cartoon, 8k cartoon illustration, razor sharp lines, perfect cel shading, vibrant saturated colors" 
-        : "masterpiece, best quality, highly detailed cartoon, sharp focus, intricate details, vibrant colors";
+        ? "masterpiece, ultra detailed cinematic cartoon, 8k resolution, razor sharp lines, perfect professional rendering, best quality, intricate details" 
+        : "masterpiece, highly detailed cinematic cartoon, sharp focus, professional animation quality, vibrant colors";
 
       let prompt = `${baseStyle}, \( {subject1} \){subject2}, ${pose}, ${environment}, ${qualityBoost}`;
 
       if (details) prompt += `, ${details}`;
 
       if (nsfw) {
-        prompt += ", (nsfw explicit:1.5), lewd, (detailed pussy:1.4), (detailed anus:1.3), (erect nipples:1.4), (pussy juice dripping:1.4), (semen dripping:1.3), ahegao face, tongue out long, heart-shaped pupils, glossy wet skin";
+        prompt += ", (nsfw explicit:1.6), lewd, (detailed wet pussy:1.5), (detailed anus:1.3), (erect nipples:1.4), (thick pussy juice dripping:1.5), (thick semen dripping:1.4), extreme ahegao face, long tongue out, rolling eyes, heart-shaped pupils, glossy wet skin, sweat drops cartoon style";
       }
 
       prompt = prompt.replace(/,\s*,/g, ',').trim();
@@ -351,7 +288,7 @@
 
     function copyPrompt() {
       const text = document.getElementById('output').textContent;
-      if (text) navigator.clipboard.writeText(text).then(() => alert('✅ Prompt copiado!'));
+      if (text) navigator.clipboard.writeText(text).then(() => alert('✅ Prompt 100% en inglés copiado!'));
     }
 
     function copyNegative() {
@@ -363,14 +300,13 @@
       document.getElementById('output').textContent = '';
     }
 
-    const defaultNegative = `realistic, photorealistic, 3d render, live action, blurry, low quality, bad anatomy, deformed, extra limbs, fused fingers, text, watermark, signature, ugly, poorly drawn face, realistic skin texture, lowres, jpeg artifacts, overexposed, bad proportions`;
+    const defaultNegative = `realistic, photorealistic, 3d render, live action, blurry, low quality, bad anatomy, deformed, extra limbs, fused fingers, text, watermark, signature, ugly, poorly drawn face, realistic skin texture, lowres, jpeg artifacts, bad proportions, dull colors, flat lighting`;
 
     document.getElementById('negativeOutput').textContent = defaultNegative;
 
-    // Inicializar
     window.onload = () => {
-      toggleSecondCharacter(); // carga las poses correctas
-      generatePrompt();        // genera ejemplo inicial
+      toggleSecondCharacter();
+      generatePrompt();
     };
   </script>
 </body>
